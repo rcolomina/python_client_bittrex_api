@@ -1,1 +1,1 @@
-name = "client_bittrex_api"
+name = "cbtrexapi"

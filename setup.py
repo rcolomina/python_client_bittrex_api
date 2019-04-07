@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="client-bittrex-api",
-    version="0.0.2",
+    version="0.0.5",
     author="Ruben Colomina",
     author_email="rcolomina@gmail.com",
     description="This is a client to perfrom public and private queries to Bittrex API",
@@ -13,9 +13,11 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/rcolomina/python_client_bittrex_api",
     packages=setuptools.find_packages(),
+    install_requires=['requests>=2.21.0'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
+    include_package_data=True
 )
