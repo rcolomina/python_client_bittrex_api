@@ -9,6 +9,8 @@ class ClientBittrex(object):
 
         self.conf_json = json.load(open(config))
         self.url_base = self.conf_json["url"]["base"]
+
+        # Setup credentials
         credentials = self.conf_json["credentials"]
         self.key = credentials["key"]
         self.secret = credentials["secret"]
@@ -32,6 +34,7 @@ class ClientBittrex(object):
             return r.json()['result']
         
     def get_balance(self):
+        # PRIVATE
         # Example
         # https://api.bittrex.com/api/v1.1/account/getbalances?apikey=API_KEY
         nonce=int(time.time()) # TODO: Assign a timestamp
@@ -44,16 +47,19 @@ class ClientBittrex(object):
         return self.get_private(url,keysign)
         
     def get_currencies(self):
+        # PUBLIC
         url_get_currencies  = self.conf_json["url"]["getcurrencies"]
         url = "{}/{}".format(self.url_base,url_get_currencies)
         return self.get_public(url)
 
     def get_markets(self):
+        # PUBLIC
         url_get_market = self.conf_json["url"]["getmarkets"]
         url = "{}/{}".format(self.url_base,self.url_get_markets)
         return self.get_public(url)
 
     def get_markethistory(self,market_literal):
+        # PUBLIC
         url_get_market_history = self.conf_json["url"]["getmarkethistory"]
         url = "{}/{}?market={}".format(self.url_base,url_get_market_history,market_literal)
         return self.get_public(url)
