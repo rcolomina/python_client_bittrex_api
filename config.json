@@ -1,0 +1,14 @@
+{
+    "url":{
+        "base":"https://api.bittrex.com/api/v1.1",
+        "getcurrencies":"public/getcurrencies",
+        "getmarkets":"public/getmarkets",
+        "getmarkethistory":"public/getmarkets",
+        "getbalances":"account/getbalances"
+    },
+    "credentials":{
+        "help":"To request private queries you need to fullfil key and secret",
+        "key": "Here put yout API key from bittrex",
+        "secret": "Here put your API secret from bittrex" 
+    }
+}
